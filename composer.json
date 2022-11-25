@@ -20,7 +20,7 @@
                 "Arui\\TcCaptcha\\TcCaptchaProvider"
             ],
             "aliases": {
-                "JEmail": "Arui\\TcCaptcha\\Facades\\TcCaptchaFacade"
+                "JEmail": "Arui\\TcCaptcha\\Facades\\TcCaptcha"
             }
         }
     },

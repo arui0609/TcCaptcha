@@ -11,6 +11,14 @@ class TcCaptcha
 {
     use Request;
 
+    public $secret_id;
+
+    public $secret_key;
+
+    public $CaptchaAppId;
+
+    public $AppSecretKey;
+
     public function DescribeCaptchaResult($Ticket, $Randstr, $UserIp)
     {
         if (!$Ticket) {
@@ -31,6 +39,7 @@ class TcCaptcha
             'AppSecretKey' => $this->AppSecretKey,
             'NeedGetCaptchaTime' => 1
         ];
+
         $data = array_merge($data, $this->getCommonParam());
         $data['Signature'] = $this->getSignature($data, $host);
         $url = "https://{$host}/?" . http_build_query($data);
@@ -48,7 +57,6 @@ class TcCaptcha
 
     public function __construct()
     {
-//        $config = ConfigQQ::find(1);
         $this->secret_id = config('qq_captcha.secret_id');
         $this->secret_key = config('qq_captcha.secret_key');
         $this->CaptchaAppId = config('qq_captcha.secret_appid');

@@ -13,7 +13,7 @@ class TcCaptchaProvider extends ServiceProvider
 {
     public function boot (){
         $this->publishes([
-            __DIR__.'/config/qq_captcha.php.php' => config_path('qq_captcha.php'),
+            __DIR__.'/config/qq_captcha.php' => config_path('qq_captcha.php'),
         ]);
     }
 
