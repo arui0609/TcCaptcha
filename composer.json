@@ -1,0 +1,28 @@
+{
+    "name": "arui/tc-captcha",
+    "description": "sdk for QQ Cloud Catcha Service",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Arui\\TcCaptcha\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "arui",
+            "email": "1598369123@qq.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Arui\\TcCaptcha\\TcCaptchaProvider"
+            ],
+            "aliases": {
+                "JEmail": "Arui\\TcCaptcha\\Facades\\TcCaptchaFacade"
+            }
+        }
+    },
+    "require": {}
+}
