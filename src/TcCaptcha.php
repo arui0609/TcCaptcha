@@ -46,7 +46,7 @@ class TcCaptcha
         $res = json_decode($this->curl_client($url), true);
 
         if ($res['retmsg'] == 'success' && $res['Response']['CaptchaCode'] == 1) {
-            if ((time() - $res['Response']['GetCaptchaTime']) > 5) {
+            if ((time() - $res['Response']['GetCaptchaTime']) > 30) {
                 throw new \Exception("ticket校验接口超时");
             }
             return true;
