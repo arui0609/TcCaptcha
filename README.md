@@ -10,7 +10,7 @@ Package is available on Packagist, you can install it using Composer.
 
 ### Dependencies
 
-- PHP 7.3+
+- PHP 7.0+
 - OpenSSL Extension
 - Laravel 6+
 
@@ -26,4 +26,20 @@ QQ_CAPTCHA_SECRET_APPID=
 QQ_CAPTCHA_SECRET_APPKEY=
 ```
 
+### How to use
+
+```
+use Arui\TcCaptcha\Facades\TcCaptchaFacade;
+
+try {
+    $res = TcCaptchaFacade::DescribeCaptchaResult($request->ticket, $request->randstr, Utils::getIp());
+    if($res !== true){
+        throw new \Exception($res);
+    }
+} catch (\Exception $e) {
+    $response =  ['message' => $e->getMessage(),'code' => 430];
+    return response()->json($response);
+}
+
+```
 
